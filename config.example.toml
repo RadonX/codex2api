@@ -1,0 +1,25 @@
+[server]
+host = "127.0.0.1"
+port = 8318
+max_request_body_bytes = 16777216
+max_aggregate_bytes = 33554432
+connect_timeout_seconds = 10
+response_header_timeout_seconds = 60
+
+[upstream]
+base_url = "https://chatgpt.com/backend-api/codex"
+auth_url = "https://auth.openai.com/oauth/authorize"
+token_url = "https://auth.openai.com/oauth/token"
+client_id = "app_EMoamEEZ73f0CkXaXp7hrann"
+
+[auth]
+credential_store = "keychain"
+refresh_lead_seconds = 300
+
+[logging]
+level = "info"
+request_bodies = false
+
+[models]
+static_models = ["gpt-5.5", "gpt-5.4-mini", "codex-auto-review"]
+cache_seconds = 300
